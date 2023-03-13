@@ -8,13 +8,14 @@ var subDuration = 1;
 subTypeElement.addEventListener("change", function(e){
     //the <option> is the target and we are grabbing its value
     subType = e.target.value;
+    updateSubscriptionDiv();
 
    
 });
 
 subDurationElement.addEventListener("change", function(e){
     subDuration = Number(e.target.value);
-  
+  updateSubscriptionDiv();
 });
 
 var updateSubscriptionDiv = function(){
@@ -25,5 +26,5 @@ var updateSubscriptionDiv = function(){
         monthlyCost = 10;
      }
      var total = subDuration * monthlyCost;
-     result.innerText = `you have selected ${sub} with Duration with a montly cost of $${subType}. Your total will be $${total} `
+     result.innerText = `you have selected ${subDuration} months with a montly cost of ${subType}. Your total will be $${total} `
 }
